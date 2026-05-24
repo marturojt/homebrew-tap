@@ -1,23 +1,23 @@
 class Dapctl < Formula
   desc "TUI/CLI sync tool for HiFi Digital Audio Players"
   homepage "https://dapctl.com"
-  version "0.4.0"
+  version "1.0.0"
   license "GPL-3.0-or-later"
 
   on_macos do
-    url "https://github.com/marturojt/dapctl/releases/download/v0.4.0/dapctl-v0.4.0-universal-apple-darwin.tar.gz"
-    sha256 "9fc098473a3740044ab3581d671c2b40ad08fd489255dd78330d272ef479d31d"
+    url "https://github.com/marturojt/dapctl/releases/download/v1.0.0/dapctl-v1.0.0-universal-apple-darwin.tar.gz"
+    sha256 "50bb87d5165ef9b004fb0bf98b5caab1894110256bca407ca5e8f813af0c49ff"
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/marturojt/dapctl/releases/download/v0.4.0/dapctl-v0.4.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "90b089584ee34627fa4702f1c0308e751b69ee8204395ea996be0a841dab4722"
+      url "https://github.com/marturojt/dapctl/releases/download/v1.0.0/dapctl-v1.0.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "82ef6a5fa7b460a9e4c30bfe85e5a6c030cdda5e004457246da4bb6ac3544989"
     end
 
     on_arm do
-      url "https://github.com/marturojt/dapctl/releases/download/v0.4.0/dapctl-v0.4.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "6e77e3523024635654a0837377a7b5b1dc118db4e4c0071ebb356195d94e357e"
+      url "https://github.com/marturojt/dapctl/releases/download/v1.0.0/dapctl-v1.0.0-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "dc387294140384554ccb352ddf55baf2b6ea5d151eb6733bca748b37550ace67"
     end
   end
 
