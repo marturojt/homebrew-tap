@@ -1,7 +1,6 @@
 class Termdoc < Formula
   desc "Universal document viewer for the terminal"
   homepage "https://termdoc.app"
-  version "0.2.0"
   license any_of: ["MIT", "Apache-2.0"]
 
   on_macos do
