@@ -1,0 +1,38 @@
+name: Formulae
+
+# A formula is only as good as the install it produces. This installs `termdoc` the way a user
+# does, on every platform the formula covers, runs its `test do` block, and audits it. It is the
+# check that a release's checksums and URLs are the ones the formula pins.
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  termdoc:
+    name: termdoc (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest, ubuntu-24.04-arm]
+    steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Tap this repository
+        run: brew tap marturojt/tap "https://github.com/${{ github.repository }}"
+
+      - name: Install
+        run: brew install marturojt/tap/termdoc
+
+      - name: Test
+        run: brew test marturojt/tap/termdoc
+
+      - name: It is the binary from the release
+        run: |
+          termdoc --version
+          printf '2026-08-10 12:00:00 ERROR boom\n' | termdoc --from log --color always | cat -v
+
+      - name: Audit
+        run: brew audit --strict --online marturojt/tap/termdoc
