@@ -18,7 +18,7 @@ jobs:
         os: [macos-latest, ubuntu-latest, ubuntu-24.04-arm]
     steps:
       - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@master
+        uses: Homebrew/actions/setup-homebrew@main
 
       - name: Tap this repository
         run: brew tap marturojt/tap "https://github.com/${{ github.repository }}"
